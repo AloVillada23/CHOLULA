@@ -1,0 +1,515 @@
+<!-- Tomamos el templete básico de la sección Quick start del sitio de Bootstrap
+     https://getbootstrap.com/docs/5.3/getting-started/introduction/#quick-start -->
+     <!doctype html>
+     <html lang="es">
+     <!-- Comienza head -->
+       <head>
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <meta name="autor" content="Alondra villada">
+         <meta name="description" content="Mi primer ejercicio con Bootstrap - Cholula">
+         <meta name="keywords" content="Bootstrap, Bootstrap 5.3, framework, html, css, maquetación web, Cholula, Pueblo mágico">
+         <title>Mi primer ejercicio con Bootstrap - Cholula</title>
+     <!-- La hoja de estilo de Bootstrap se enlaza con un CDN proporcionado por Bootstrap. -->
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+     <!-- Cuando añadimos hojas de estilo propias es MUY IMPORTANTE colocarlas despues de la hoja de estilos de Bootstrap para que los estilos se sobreescriban correctamente en el navegador-->
+         <link href="css/estilos.css" rel="stylesheet" type="text/css">
+     
+     <!-- Google Fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Hind&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+     
+       </head>
+     
+       <!-- Comienza Body -->
+       <body>
+         <!-- La etiqueta header es un contenedor para elemento propios del encabezado de un sitio web.
+         Todos los elementos de header deben ser iguales en todas las pantallas de nuestro sitio. -->
+         <header>
+           <!-- Bootstrap nos proporciona un templete básico para los menús de navegación por medio de la etiqueta nav y la clase navbar.
+           Esta información se puede encontrar en https://getbootstrap.com/docs/5.3/components/navbar/ -->
+           <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary nav-principal">
+             <div class="container-fluid">
+               <a class="navbar-brand" href="#">CHOLULA</a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                   <li class="nav-item">
+                     <a class="nav-link active" aria-current="page" href="#conoce">Conoce más</a>
+                   </li>
+                   <li class="nav-item">
+                     <a class="nav-link" href="#tipico">Lo típico</a>
+                   </li>
+                   
+                   <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#atractivos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       Atractivos
+                     </a>
+                     <ul class="dropdown-menu">
+                       <li><a class="dropdown-item" href="#gran-piramide">Gran Pirámide de Cholula</a></li>
+                       <li><a class="dropdown-item" href="#capilla-real">Capilla Real de Cholula</a></li>
+                       <li><hr class="dropdown-divider"></li>
+                       <li><a class="dropdown-item" href="#san-gabriel">Convento de San Gabriel</a></li>
+                       <li><a class="dropdown-item" href="#caballero-aguila">Casa del Caballero Águila</a></ li>
+                     </ul>
+                   </li>
+                   <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       Alrededores
+                     </a>
+                     <ul class="dropdown-menu">
+                       <li><a class="dropdown-item" href="#chipilo">Chipilo</a></li>
+                       <li><a class="dropdown-item" href="#tonanzintla">Tonanzintla</a></li>          
+                     </ul>
+                   </li>
+     
+     
+                   <li class="nav-item">
+                     <a class="nav-link"  href="#fiestas">Fiestas</a>
+                   </li>
+                   <li class="nav-item">
+                     <a class="nav-link" href="#gastronomia">Gastronomía</a>
+                   </li>
+                   <li class="nav-item">
+                     <a class="nav-link" href="#donde-dormir">Dónde dormir</a>
+                   </li>
+                   <li class="nav-item">
+                     <a class="nav-link" href="#como-llegar">Cómo llegar</a>
+                   </li>
+                 </ul>
+                
+               </div>
+             </div>
+           </nav>
+     
+         </header>
+     
+         <!-- En Bootstrap trabajamos con tres tipos de contenedor: de ancho fijo (.container), fluido (.container-fluid) y de ancho específico (.container-{breakpoint}). Este último es específico para la versión 5.-->
+         <div class="container principal">
+         
+         <!-- En Bootstrap la clase .row indica una fila. Para más información de filas y columnas en Bootstrap revisa el link https://getbootstrap.com/docs/5.3/layout/grid/  -->  
+         <div class="row">
+           <!-- En Bootstrap la clase .col indica las columnas que estarán en el contenedor row. Podemos escribir la clase col o podemos indicar con número del 1 al 12 la cantidad de columnas que deberá abarcar.-->
+           <div class="col-12">
+     
+             <!-- Este es un ejemplo de Carrusel con los elementos que proporciona Bootstrap. en este ejemplo estamos usando indicadores y textos de caption.
+             Para más referencias puedes consultar https://getbootstrap.com/docs/5.3/components/carousel/ -->
+     
+             <!-- En la versión 5 los ejemplos de carrusel no están inicializados y hay que hacerlo de manera manual. En este caso, usamos el ejemplo que tiene indicadores, flechas y caption y tuvimos que agregar el atributo  data-bs-ride="false" en la primer línea para que el carrusel esté activo  -->
+             <div id="carouselExampleCaptions" class="carousel slide carousel-home" data-bs-ride="false">
+               <div class="carousel-indicators">
+                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+               </div>
+               <div class="carousel-inner">
+                 <div class="carousel-item active">
+                   <img src="imagenes/slide1.jpg" class="d-block w-100" alt="Cholula">
+                   <div class="carousel-caption d-none d-md-block">
+                     <h5>GRAN PIRÁMIDE DE CHOLULA</h5>
+                    
+                   </div>
+                 </div>
+                 <div class="carousel-item">
+                   <img src="imagenes/slide2.jpg" class="d-block w-100" alt="Cholula">
+                   <div class="carousel-caption d-none d-md-block">
+                  
+                   </div>
+                 </div>
+                 <div class="carousel-item">
+                   <img src="imagenes/slide3.jpg" class="d-block w-100" alt="...">
+                   <div class="carousel-caption d-none d-md-block">
+                     <h5>ZONA ARQUEOLÓGICA DE CHOLULA</h5>
+
+                   </div>
+                 </div>
+               </div>
+               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                 <span class="visually-hidden">Previous</span>
+               </button>
+               <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                 <span class="visually-hidden">Next</span>
+               </button>
+             </div>
+     
+         <h1>CHOLULA</h1>
+       
+         <p>Este Pueblo Mágico de Puebla te sorprenderá con los restos de una antigua (y enorme) pirámide prehispánica que, después de la Conquista, sirvió como sustento para el Templo Los Remedios.</p>
+        
+         <blockquote>Cholula: Entre un gran templo prehispánico e iglesias coloniales</blockquote>
+         
+     
+         <!-- Para embeber un video responsivo se debe agregar un contenedor con la clase .embed-responsive, garantizar que se mantenga la proporción del video o elemento debemos especificar la proporción en la clase. Más información en https://getbootstrap.com/docs/4.1/utilities/embed/#example -->
+     
+         <div class="embed-responsive embed-responsive-16by9 ">
+         <!-- Video incrustado desde YouTube con la clase .embed-responsive-item -->
+         <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/-tih2xWjG7k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+     </div>
+     
+         <p>Cholula -formado por los poblados de San Andrés Cholula y San Pedro Cholula- recibe al visitante con una imagen única en México y el mundo: una estructura piramidal cubierta por follaje y coronada por una iglesia virreinal, custodiadas por el volcán Popocatépetl. En este Pueblo Mágico muy cercano a la ciudad de Puebla destacan sus múltiples templos de la época, de la Colonia (tantos que, se dice, hay uno por cada día del año), así como su exquisita gastronomía, su fina talavera y el agradable ambiente de provincia.  </p>
+         
+         <!-- Bootstrap nos permite dar algunos estilos a las imágenes, así como ajustar la posición. En este caso estamos usando una clase que le redondea los bordes y la coloca al centro de la ventana. Para más opciones de imágenes puedes visitar https://getbootstrap.com/docs/5.3/content/images/ -->
+         <img src="Imagenes/cholula1.png" alt="cholula" class="img-fluid rounded mx-auto d-block">
+         
+         </div>
+         </div>
+     
+     <!-- Inicia Row -->
+     <div class="row bloque-interno">
+       <div class="col-12">
+         <h2 id="conoce">Conoce más</h2>
+         <p>Fue fundada por grupos toltecas que fueron exiliados de Tula cerca del año 500 a.C., lo que la convierte en una de las poblaciones vivas más antiguas de América. Posteriormente los cholultecas fueron tributarios de los mexicas, pero se distinguieron históricamente por su ánimo independiente.</p>
+     
+           <p> Cholula también es conocida por ser escenario de uno de los episodios más cruentos de la Conquista. En 1519 las fuerzas de Hernán Cortés, que habían sido recibidas por los locales, cometieron la infame Matanza de Cholula pues sospechaban una emboscada. Se calcula que murieron hasta 6,000 cholultecas, la mayoría de ellos civiles.</p>
+         </div>
+         </div>
+     <!-- Inicia row -->
+     <!-- En este row se colocan dos columnas -->
+     <div class="row bloque-interno">
+        <div class="col-7">
+         <h2 id="tipico">Lo típico</h2>
+         <p>Compra talavera en el Taller de Talavera de la Reyna, donde conservan las técnicas de trabajo del siglo XVI aplicadas a diseños contemporáneos. Las piezas van desde azulejos, platos y vajillas, hasta jarrones, floreros, macetas y cazuelas. </p>
+         <br>
+         <p>San Pedro Cholula se destaca por su alfarería de barro rojo, los árboles de la vida y las vajillas. Debido a las festividades religiosas a lo largo del año, Cholula también es conocida por la manufactura de artículos pirotécnicos como toritos, cascadas y castillos. Puedes conseguir estos productos en el Centro Artesanal, Cultural y Gastronómico Xelhua.</p>
+         <h2 id="sabias">Sabías qué</h2>
+        <p>Hay tantas iglesias y templos en Cholula que se dice que hay uno por cada día del año.</p>
+        </div>
+       
+         <div class="col-5">
+         <img src="imagenes/cholula-2.png" alt="Cholula"   class="img-fluid rounded mx-auto d-block">
+        </div>
+     </div>
+     
+     <!-- Inicia row -->
+     <!-- En este bloque colocamos cuatro columnas. Además en cada columna colocaremos el contenido en formato de cards.
+     Para más información de cards puedes visitar https://getbootstrap.com/docs/5.3/components/card/#about  -->
+     <div class="row bloque-interno">   
+     <h2 id="atractivos">Atractivos</h2>
+     <!-- En este ejemplo estamos aplicando tres clases para las columnas que funcionarán para el responsive. La clase que contiene lg es para la visualización en dispositivos grandes, la clase md para dispositivos medianos y sm para dispositivos pequeños.-->
+     <div class="col-lg-3 col-md-6 col-sm-12">
+      
+     <!-- En estas vards haremos uso de las ventanas modales. Una ventana modal es aquella que se acciona desde un elemento, generalmente desde un botón y se despliega por encima del contenido mostrando información como puede ser imágenes, textos, botones e incluso se pueden agregar videos. Una ventana modal deberá tener elementos que permitan cerrarla.
+     Se pueden agregar varias ventanas modales en un mismo documento pero es importante asignarle un ID a cada una como se puede ver en los ejemplos.
+     Para más información de ventanas modales https://getbootstrap.com/docs/5.3/components/modal/ --> 
+      
+       <!-- Inicia contenido de card -->
+       <div class="card">
+         <img src="imagenes/piramide.png" class="card-img-top" alt="La Gran Pirámide de Cholula">
+         <div class="card-body">
+           <h5 class="card-title" id="gran-piramide">Gran Pirámide de Cholula</h5>
+       
+     
+      <!-- Button trigger modal -->
+     <button type="button" class="btn btn-chol1" data-bs-toggle="modal" data-bs-target="#modal1">
+       Conoce más
+     </button>
+     
+     <!-- Modal -->
+     <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog modal-lg">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h1 class="modal-title fs-5" id="exampleModalLabel">Gran Pirámide de Cholula</h1>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body">
+             <img src="imagenes/piramide@2x.png" class="card-img-top" alt="La Gran Pirámide de Cholula">
+             <br>
+            <p>Su nombre original en náhuatul es Tlachihualteptl, que significa “cerro hecho a mano”. Esta pirámide tiene la base más grande del mundo: 400 metros por lado. Sobre la pirámide se yergue el Santuario de la Virgen de los Remedios, cuya cúpula está cubierta por talavera típica de la región. La zona arqueológica cuenta con un Museo de Sitio, en que se dan pormenores sobre la historia de la pirámide y la iglesia a lo largo de tres salas. Te recomendamos acceder a la zona arqueológica a través de los misteriosos túneles.</p>
+     
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-chol1" data-bs-dismiss="modal">Cerrar</button>
+            
+           </div>
+         </div>
+       </div>
+     </div>
+     <!-- Fin modal -->
+     
+         </div>
+       </div>
+       
+     </div>
+     <div class="col-lg-3 col-md-6 col-sm-12">
+       <!-- Inicia contenido de card -->
+       <div class="card" >
+         <img src="imagenes/capilla.png" class="card-img-top" alt="Capilla Real de Cholula">
+         <div class="card-body">
+           <h5 class="card-title" id="capilla-real">Capilla Real de Cholula</h5>
+          
+         
+            <!-- Button trigger modal -->
+     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal2">
+       Conoce más
+     </button>
+     
+     <!-- Modal -->
+     <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog modal-lg">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h1 class="modal-title fs-5" id="exampleModalLabel">Capilla Real de Cholula</h1>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body">
+             <img src="imagenes/capilla@2x.png" class="card-img-top" alt="Capilla Real de Cholula">
+             <br>
+             <p class="card-text">Es otro ejemplo de un lugar de culto católico construido sobre un recinto sagrado prehispánico. Esta edificación fue erigida con mano de obra indígena sobre lo que solía ser el templo de Quetzalcóatl. Cabe mencionar que la estructura sigue algunos preceptos de la cosmología prehispánica; las siete naves que van de oriente a poniente, por ejemplo, representan a Chicomecoatl, la Madre Tierra. La Fiesta del Pueblo, celebrada el domingo anterior a Pentecostés, sigue siendo en su honor. En la pila bautismal, que data del siglo XVI, aún puede apreciarse un calendario indígena.</p>
+     
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+            
+           </div>
+         </div>
+       </div>
+     </div>
+     <!-- Fin modal -->
+     
+     
+         </div>
+       </div>
+     
+     </div>
+     <div class="col-lg-3 col-md-6 col-sm-12"> 
+        <!-- Inicia contenido de card -->
+       <div class="card" >
+         <img src="imagenes/sangabriel.png" class="card-img-top" alt="Convento de San Gabriel">
+         <div class="card-body">
+           <h5 class="card-title" id="san-gabriel">Convento de San Gabriel</h5>
+           
+        
+     <!-- Button trigger modal -->
+     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal3">
+       Conoce más
+     </button>
+     
+     <!-- Modal -->
+     <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog modal-lg">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h1 class="modal-title fs-5" id="exampleModalLabel">Convento de San Gabriel</h1>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body">
+             <img src="imagenes/sangabriel@2x.png" class="card-img-top" alt="Convento de San Gabriel">
+             <br>
+             <p class="card-text">Se ubica en el centro del poblado y es uno de los templos más antiguos del país, ya que se remonta a 1549. Frente a este complejo franciscano se encuentra la Parroquia de San Pedro Cholula, gran ejemplo de la arquitectura religiosa colonial, con una cúpula de estilo churrigueresco. En el interior se descubre una pintura de Cristóbal de Villalpando que muestra a San Miguel Arcángel con traje de guerrero.</p>
+     
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+            
+           </div>
+         </div>
+       </div>
+     </div>
+     <!-- Fin modal -->
+         </div>
+       </div>
+     
+     </div>
+     <div class="col-lg-3 col-md-6 col-sm-12"> 
+        <!-- Inicia contenido de card -->
+       <div class="card" >
+         <img src="imagenes/aguila.png" class="card-img-top" alt="Casa del Caballero Águila">
+         <div class="card-body">
+           <h5 class="card-title" id="caballero-aguila">Casa del Caballero Águila</h5>
+          
+      <!-- Button trigger modal -->
+     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal4">
+       Conoce más
+     </button>
+     
+     <!-- Modal -->
+     <div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog modal-lg">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h1 class="modal-title fs-5" id="exampleModalLabel">Casa del Caballero Águila</h1>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body">
+             <img src="imagenes/aguila@2x.png" class="card-img-top" alt="Casa del Caballero Águila">
+             <br>
+             <p class="card-text">Nombrada así por el bajorrelieve que flanquea su entrada principal. Su planta baja data del siglo XVI y la alta del XVII. Actualmente aloja al Museo de la Ciudad de Cholula, con seis salas donde se exhiben alrededor de 2,300 piezas prehispánicas y virreinales. Vale la pena visitarlo no sólo por la obra expuesta, sino también porque se encuentra en el edificio civil hispano más antiguo de Cholula.</p>
+           <p class="card-text">Hay un tranvía que puedes tomar en la Caseta de Atención Turística 1, en las esquinas de las avenidas Hidalgo y Miguel Alemán. El recorrido pasa por Tonanzintla, la Capilla Real y la plaza central.</P>
+     
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+            
+           </div>
+         </div>
+       </div>
+     </div>
+     <!-- Fin modal -->
+         </div>
+       </div>
+     
+     </div>
+     </div>
+     <!-- Inicia row -->
+        <div class="row bloque-interno">
+         <h2 id="alrededores">Alrededores</h2>
+       
+        <h3 id="chipilo">Chipilo</h3>
+        <p>Este poblado, de de evidente influencia italiana, se encuentra a aproximadamente media hora en auto (unos 18 kilómetros). Ahí podrás disfrutar de quesos, miel y carnes frías de producción artesanal.</p>
+        <br><br>
+      
+         <h3 id="tonanzintla">Tonanzintla</h3>
+         <p>El “lugar de nuestra madrecita”, se encuentra apenas a cuatro kilómetros al sur de Cholula. Vale la pena visitar la iglesia de Santa María Tonanzintla, una joya del barroco mexicano. En el interior del templo hay una cúpula repleta de figuras de niños con motivos indígenas como penachos, frutas, mazorcas y cuernos de la abundancia. La nave está decorada con chapa de oro. Además, este poblado ofrece una vista espectacular del volcán Popocatépetl, así como cielos llenos de estrellas (no por nada la localidad es sede del Observatorio Astrofísico Nacional de Tonanzintla). </p>
+        </div>
+        <!-- Inicia row -->
+         <div class="row">
+           <h2 id="fiestas">Fiestas y eventos</h2>
+         <p>Del 1 al 8 de septiembre se lleva a cabo la fiesta de la Virgen de los Remedios, la más importante para los cholultecas. Hay danzas rituales con grupos de concheros, ofrendas para la virgen y quema de panzones (grandes estructuras de cartón con forma humana). Tras la veneración a la virgen, los peregrinos realizan un trueque de productos como queso, frutas, ocote, incienso y nueces de la región. Es una manifestación cultural que data de tiempos prehispánicos y que vale la pena atestiguar. </p>
+         </div>
+     
+         <!-- Inicia row -->
+         <div class="row bloque-interno">
+         <h2 id="gastronomia">Gastronomía / Dónde comer</h2>
+         <p>Cholula cuenta con una buena oferta gastronómica que va desde las tiendas gourmet hasta restaurantes de cadenas internacionales. Pero nada como beber una cerveza y comer botanas típicas en la plaza principal. Entre los platillos de la región se encuentran la sopa cholulteca (a base de poro, tocino y pollo), la cecina con rajas, los gusanos conocidos como “cueclas” y las “orejas de elefante”, tortillas de grandes dimensiones rellenas con frijoles y coronadas con salsa, queso y cebolla.</p>
+         <br>
+         <P>No puedes irte sin desayunar en el mercado. Los lugareños utilizan ingredientes frescos para preparar antojitos típicos como sopes y quesadillas, así como sin comer mole poblano.</P>
+        <!-- Se pueden asignar estilos a las listas, para revisar las opciones visita el enlace https://getbootstrap.com/docs/5.3/content/typography/#lists  -->
+         <ul>
+             <li >
+                 Ocho 30 (internacional)
+                3 Poniente No. 101-A. </li>
+                <li >
+                 El Zapata (regional)
+                12 Oriente, esquina 2 Norte. </li>
+                <li >
+                     La Lunita (regional)
+                     Av. Morelos Norte No. 419, esquina 6.</li>
+         </li>
+         </ul>
+     </div>
+     <!-- Inicia row -->
+     <div class="row bloque-interno">
+        
+         <h2 id="donde-dormir">Dónde dormir</h2>
+         <ul>
+             <li>Villas Arqueológicas
+                 2 Poniente No. 601, San Andrés.<br>
+                 <a href="http://www.villasarqueologicas.com.mx/" target="_blank">www.villasarqueologicas.com.mx</a>
+               </li>
+     
+             <li>Estrella de Belem, Bed & Breakfast & Spa
+                 2 Oriente No. 410, Centro, San Pedro.<br>
+                 <a href="www.estrelladebelem.com" target="_blank" >wwww.estrelladebelem.com</a>
+               </li>
+     
+             <li>Hotel Las Iglesias
+              7 Sur No. 501, San Pedro.<br>
+              <a href="www.hotelasiglesias.com.mx" target="_blank" >www.hotelasiglesias.com.mx</a>
+             </li>
+         </ul>
+     </div>
+     <!-- Inicia row -->
+        <div class="row bloque-interno">
+          <h2 id="como-llegar">Cómo llegar</h2>
+     
+         <!-- Mapa embebido -->
+         <!-- 4:3 aspect ratio -->
+     <div class="embed-responsive embed-responsive-4by3 mapa-emb">
+       <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60331.57017810979!2d-98.35334154840031!3d19.07590675567994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc8a16b13cfb1%3A0x2825dd848e53ec4a!2sCholula%2C%20Pue.!5e0!3m2!1ses-419!2smx!4v1681921044390!5m2!1ses-419!2smx" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+     </div>
+     
+         <!-- Las tablas son uno de los elementos más importantes en HTML, en principio porque los primeros sitios web se estructuraban con esa base, actualmente se utlizan etiquetas de contenedores como div, section, o article entre otras pero las tablas se siguen utiliznado para la visualización de contenidos tabulares.
+         
+         Bootstrap da varias opciones de clases que puedes encontrar en https://getbootstrap.com/docs/5.3/content/tables/ -->
+           
+         <!-- Para hacer la tabla responsiva debemos colocar un contenedor y a éste aplicarle la clase .table-responsive . También se puede indicar el tamaño del dispositivo en el que se va a aplicar. -->
+         <div class="table-responsive">
+     
+         <table class="table table-striped-columns table-bordered table-sm">
+           <!-- La etiqueta thead indica el encabezado de la página. La etiqueta th indica cada una de las celdas del encabezado, la cantidad de etiquetas th indicará la cantidad de columnas de la tabla-->
+           <thead>
+             <tr>
+               <th scope="col">#</th>
+               <th scope="col">Camión</th>
+               <th scope="col">Avión</th>
+               <th scope="col">Auto</th>
+             </tr>
+           </thead>
+           <!-- La etiqueta tbody indica el cuerpo de la tabla. La etiqueta tr indica una fila. La cantidad de etiquetas tr indicará la cantidad de filas que tenga una tabla. Del mismo modo la etiqueta td indica una celda y la cantidad de etiquetas td indicará la cantidad de columnas de la tabla.  -->
+           <tbody  class="table-group-divider">
+             <tr>
+               <th scope="row">Tiempo</th>
+               <td>2 hrs</td>
+               <td>-</td>
+               <td>1 hr 30 min</td>
+             </tr>
+             <tr>
+               <th scope="row">Costo</th>
+               <td>$700</td>
+               <td>-</td>
+               <td>$500</td>
+             </tr>
+             <tr>
+               <th scope="row">Corridas</th>
+               <td>3 al día</td>
+               <td>-</td>
+               <td>-</td>
+             </tr>
+           </tbody>
+         </table>
+         </div>
+     </div>
+     
+     <!-- Inicia row -->
+     <div class="row bloque-interno">
+       <!-- En ocasiones necesitamos que las columnas se "empujen" sin necesidad de crear columnas vacías, para esto se utliza la clase offset-. Para más información consulta el enlace https://getbootstrap.com/docs/5.3/layout/columns/#offsetting-columns -->
+       <div class="col-md-8 offset-md-2">
+     <h2 id="informacion">Solicita información</h2>
+     <!-- Formulario -->
+     <form>
+       <!-- Bloque para información del nombre -->
+       <!-- La etiqueta label corresponde a la etiqueta del campo, es decir el título que lleva.
+       La etiqueta input se refiere al campo donde se va a ingresar la información. Existen varios tipos de input dependiendo del tipo de contenido, en este caso usamos text, y en el siguiente email. Para más iformación consulta el enlace https://www.w3schools.com/html/html_forms.asp  -->
+       <div class="mb-3">
+         <label  class="form-label">Nombre completo</label>
+         <input type="text" class="form-control"  placeholder="Escribe tu nombre completo">
+         <div id="emailHelp" class="form-text">Escribe tu nombre seguido por tus apellidos.</div>
+       </div>
+       <div class="mb-3">
+         <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Escribe tu correo electrónico">
+         <div id="emailHelp" class="form-text">No compartiremos tu correo con nadie.</div>
+       </div>
+       <div class="mb-3">
+         <label  class="form-label">Indica el tipo de información que requieres</label>
+         <!-- en este caso usamos textarea en vez de input para incluir contenido en forma de texto largo -->
+         <textarea class="form-control" placeholder="Describe la información que necesites"></textarea>
+       
+       </div>
+       <div class="mb-3 form-check">
+         <input type="checkbox" class="form-check-input" id="exampleCheck1">
+         <label class="form-check-label" for="exampleCheck1">Acepto políticas</label>
+       </div>
+       <button type="submit" class="btn btn-primary">Solicitar</button>
+     </form>
+     
+     </div>
+     </div>
+     
+     
+     <!-- Bootstrap proporciona estilos para los botones, basta colocar la clase .btn en un hipervínculo para que se le asignen estilos de botón. Adicionalmente se debe colocar alguna clase de los diferentes estilos disponibles o crear una clase nueva. Los estilos los encuentras en https://getbootstrap.com/docs/5.3/components/buttons/  -->
+         <a href="#" class="btn btn-secondary">Volver arriba</a>
+         </div>
+        
+     <!-- El archivo JavaScript también se enlaza por medio de un CDN proporcionado por Bootstrap.
+         Los recursos de JavaScript se colocan antes de cerrar la etiqueta body para evitar que la
+     página tarde en cargar el contenido -->
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+       </body>
+     </html>
